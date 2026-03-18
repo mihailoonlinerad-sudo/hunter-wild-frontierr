@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hunter: Wild Frontier - The ultimate hunting simulator with realistic wildlife, weapons, and immersive maps. Buy now for €50!">
+<meta name="keywords" content="hunting game, deer hunting, FPS, simulator, Hunter Wild Frontier, Unreal Engine 5">
+<meta property="og:title" content="Hunter: Wild Frontier">
+<meta property="og:description" content="The ultimate hunting simulator with realistic wildlife and immersive maps. Available now for €50.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80">
+<meta property="og:url" content="https://yourwebsite.com">
+<link rel="icon" type="image/png" href="https://i.ibb.co/8m6DgYz/favicon.png">
+<title>Hunter: Wild Frontier</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Hunter: Wild Frontier",
+  "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80",
+  "description": "The ultimate hunting simulator with realistic wildlife and immersive maps.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Veljko Stanić & Mihailo Minić"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://yourwebsite.com",
+    "priceCurrency": "EUR",
+    "price": "50.00",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "245"
+  }
+}
+</script>
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif;}
+body {color:#f5f5f5; line-height:1.6; overflow-x:hidden; background:#0e0e0e;}
+
+/* Hero / Parallax Green Forest Background */
+.hero {
+    height:600px; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    text-align:center; 
+    position:relative; 
+    background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80'); 
+    background-attachment:fixed; 
+    background-position:center; 
+    background-size:cover;
+}
+.hero::after {content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+.hero-content {position:relative; z-index:2; animation:fadeIn 2s ease-in;}
+.hero-content h2 {font-size:3em; color:#fff; margin-bottom:20px; text-shadow:0 0 15px #000;}
+.hero-content p {font-size:1.2em; margin-bottom:30px; text-shadow:0 0 10px #000;}
+.hero-content a {padding:15px 30px; background:#c6a75e; color:#121212; font-weight:bold; text-decoration:none; border-radius:5px; transition:all 0.3s; box-shadow:0 0 5px #c6a75e;}
+.hero-content a:hover {background:#a5834f; transform:scale(1.05); box-shadow:0 0 20px #c6a75e;}
+
+/* Header */
+header {background:rgba(27,27,27,0.85); padding:20px 50px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #c6a75e; position:sticky; top:0; z-index:999;}
+header h1 {color:#c6a75e; font-size:2em;}
+nav ul {display:flex; list-style:none;}
+nav ul li {margin-left:30px;}
+nav ul li a {color:#f5f5f5; text-decoration:none; font-weight:bold; transition:color 0.3s;}
+nav ul li a:hover {color:#c6a75e;}
+
+/* Features with Green Forest Background */
+.features, .screenshots, .trailer, .download, .reviews, .newsletter, .authors, footer {
+    background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80'); 
+    background-size:cover; 
+    background-position:center; 
+    background-attachment:fixed;
+}
+
+/* Section Styles */
+.features {padding:60px 40px; display:flex; flex-wrap:wrap; justify-content:space-between; border-radius:10px;}
+.feature {flex:1 1 30%; margin-bottom:40px; padding:20px; border:1px solid #333; border-radius:10px; transition:transform 0.3s, box-shadow 0.3s; opacity:0; transform:translateY(30px);}
+.feature.show {opacity:1; transform:translateY(0);}
+.feature h3 {color:#c6a75e; margin-bottom:15px;}
+.feature p {font-size:1em;}
+
+.screenshots {padding:60px 40px;}
+.screenshots h2 {text-align:center; color:#c6a75e; margin-bottom:40px;}
+.screenshot-gallery {display:flex; flex-wrap:wrap; gap:20px; justify-content:center;}
+.screenshot-gallery img {width:300px; border-radius:10px; border:2px solid #c6a75e; transition:transform 0.3s, filter 0.3s;}
+.screenshot-gallery img:hover {transform:scale(1.05) translateY(-5px); filter:brightness(1.2); cursor:pointer;}
+
+.trailer {padding:60px 40px; text-align:center;}
+.trailer h2 {color:#c6a75e; margin-bottom:30px;}
+.trailer button {padding:15px 35px; background:#c6a75e; color:#121212; font-weight:bold; border:none; border-radius:5px; cursor:pointer; transition:all 0.3s; box-shadow:0 0 5px #c6a75e;}
+.trailer button:hover {background:#a5834f; transform:scale(1.05); box-shadow:0 0 15px #c6a75e;}
+
+.modal {display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.95);}
+.modal-content {position:relative; margin:5% auto; padding:0; width:80%; max-width:900px; animation:fadeIn 0.5s;}
+.modal-content iframe {width:100%; height:500px; border:none; border-radius:10px;}
+.close {position:absolute; top:10px; right:25px; color:#fff; font-size:35px; font-weight:bold; cursor:pointer;}
+
+.download {padding:60px 40px; text-align:center;}
+.download h2 {color:#c6a75e; margin-bottom:20px;}
+.download p {font-size:1.2em; margin-bottom:30px;}
+.download a, .paypal-btn input[type="image"] {padding:20px 50px; background:#c6a75e; color:#121212; font-weight:bold; text-decoration:none; border-radius:5px; transition:all 0.3s; box-shadow:0 0 5px #c6a75e;}
+.download a:hover, .paypal-btn input[type="image"]:hover {background:#a5834f; transform:scale(1.05); box-shadow:0 0 15px #c6a75e; cursor:pointer;}
+
+.reviews {padding:60px 40px;}
+.reviews h2 {text-align:center; color:#c6a75e; margin-bottom:40px;}
+.review {margin-bottom:30px; padding:20px; border:1px solid #333; border-radius:10px; transition:all 0.3s; opacity:0; transform:translateY(20px);}
+.review.show {opacity:1; transform:translateY(0);}
+.review h3 {color:#f5f5f5; margin-bottom:10px;}
+.review p {font-style:italic;}
+
+.newsletter {padding:60px 40px; text-align:center;}
+.newsletter input[type="email"] {padding:15px; width:300px; max-width:80%; border-radius:5px; border:none; margin-right:10px; transition:all 0.3s;}
+.newsletter input[type="email"]:focus {outline:none; box-shadow:0 0 10px #c6a75e;}
+.newsletter button {padding:15px 25px; border:none; border-radius:5px; background:#c6a75e; font-weight:bold; cursor:pointer; transition:all 0.3s; box-shadow:0 0 5px #c6a75e;}
+.newsletter button:hover {background:#a5834f; transform:scale(1.05); box-shadow:0 0 15px #c6a75e;}
+
+.authors, footer {padding:40px; text-align:center; border-top:2px solid #c6a75e;}
+.authors p, footer p {color:#888; font-size:1em;}
+
+@keyframes fadeIn {0%{opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);}
+
+@media(max-width:900px){
+    .features {flex-direction:column; align-items:center;}
+    .feature {flex:1 1 80%;}
+    .screenshot-gallery img {width:80%;}
+    .trailer button {width:80%; font-size:1em;}
+    .modal-content iframe {height:300px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Hunter: Wild Frontier</h1>
+<nav>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#screenshots">Screenshots</a></li>
+<li><a href="#trailer">Trailer</a></li>
+<li><a href="#download">Purchase</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#newsletter">Newsletter</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>The Ultimate Hunting Experience</h2>
+<p>Track, hunt, and shoot in a realistic open-world hunting simulator. Feel the thrill of the wild!</p>
+<a href="#download">Buy Now - €50</a>
+</div>
+</section>
+
+<section class="features" id="features">
+<div class="feature"><h3>Realistic Animals</h3><p>Fully AI-driven wildlife: deer, bears, wolves, and more. Dynamic animations for ultimate realism.</p></div>
+<div class="feature"><h3>Advanced Weapons</h3><p>Choose from rifles, bows, and traps with realistic mechanics, recoil, and sound effects.</p></div>
+<div class="feature"><h3>Dynamic Weather</h3><p>Experience changing weather, day/night cycles, and environmental challenges.</p></div>
+<div class="feature"><h3>Immersive Maps</h3><p>Explore mountains, forests, rivers, and plains with high-fidelity textures and terrains.</p></div>
+<div class="feature"><h3>Challenge Missions</h3><p>Complete hunting challenges, collect points, and unlock exclusive areas and weapons.</p></div>
+<div class="feature"><h3>High-End Graphics</h3><p>Powered by Unreal Engine 5 with Lumen lighting, Nanite optimization, and realistic particle effects.</p></div>
+</section>
+
+<section class="screenshots" id="screenshots">
+<h2>Game Screenshots</h2>
+<div class="screenshot-gallery">
+<img src="https://images.unsplash.com/photo-1596563380903-7e53f3c1f2e7?auto=format&fit=crop&w=800&q=80" alt="Screenshot 1" loading="lazy">
+<img src="https://images.unsplash.com/photo-1601933473744-693f9a94f3cb?auto=format&fit=crop&w=800&q=80" alt="Screenshot 2" loading="lazy">
+<img src="https://images.unsplash.com/photo-1575242432830-d8a9731b8b76?auto=format&fit=crop&w=800&q=80" alt="Screenshot 3" loading="lazy">
+</div>
+</section>
+
+<section class="trailer" id="trailer">
+<h2>Watch Trailer</h2>
+<button id="openModal">Watch Trailer</button>
+</section>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<span class="close">&times;</span>
+<iframe src="https://www.youtube.com/embed/5qap5aO4i9A" allowfullscreen></iframe>
+</div>
+</div>
+
+<section class="download" id="download">
+<h2>Purchase Hunter: Wild Frontier</h2>
+<p>Secure your copy today for €50. Instant digital download with PayPal.</p>
+<form class="paypal-btn" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input type="hidden" name="business" value="your-paypal-email@example.com">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="item_name" value="Hunter: Wild Frontier">
+<input type="hidden" name="item_number" value="HWFG001">
+<input type="hidden" name="amount" value="50.00">
+<input type="hidden" name="currency_code" value="EUR">
+<input type="image" name="submit" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/buy-logo-medium.png" alt="Buy Now">
+<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+</form>
+</section>
+
+<section class="reviews" id="reviews">
+<h2>Player Reviews</h2>
+<div class="review"><h3>John D.</h3><p>"Absolutely stunning graphics and realistic hunting mechanics. Best hunting game I've ever played!"</p></div>
+<div class="review"><h3>Emily R.</h3><p>"The AI for animals is incredible. It really feels like you're out in the wild!"</p></div>
+<div class="review"><h3>Marcus P.</h3><p>"Worth every euro. Smooth gameplay, awesome maps, and amazing weapons."</p></div>
+</section>
+
+<section class="newsletter" id="newsletter">
+<h2>Subscribe to our Newsletter</h2>
+<p>Get updates, tips, and special offers directly to your inbox.</p>
+<form>
+<input type="email" placeholder="Enter your email" required>
+<button type="submit">Subscribe</button>
+</form>
+</section>
+
+<section class="authors">
+<p>Developed by Veljko Stanić & Mihailo Minić | © 2026 Hunter: Wild Frontier</p>
+</section>
+
+<footer>
+<p>&copy; 2026 Hunter: Wild Frontier. All rights reserved. | Contact: support@hunterwildfrontier.com</p>
+</footer>
+
+<script>
+// Modal
+const modal = document.getElementById("modal");
+const btn = document.getElementById("openModal");
+const span = document.getElementsByClassName("close")[0];
+btn.onclick = () => modal.style.display="block";
+span.onclick = () => modal.style.display="none";
+window.onclick = e => {if(e.target==modal) modal.style.display="none";}
+
+// Scroll animations
+const features = document.querySelectorAll('.feature');
+const reviews = document.querySelectorAll('.review');
+const observer = new IntersectionObserver(entries => {entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');}});},{threshold:0.2});
+features.forEach(f=>observer.observe(f));
+reviews.forEach(r=>observer.observe(r));
+</script>
+
+</body>
+</html>
